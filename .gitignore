@@ -1,0 +1,31 @@
+# Keil build outputs
+MDK-ARM/stm32_Smart_cat_house/
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+MDK-ARM/*.log
+MDK-ARM/*.lst
+MDK-ARM/*.uvguix.*
+MDK-ARM/*.uvoptx
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+*.axf
+*.hex
+*.bin
+*.elf
+*.o
+*.d
+*.crf
+*.map
+*.lnp
+*.dep
+
+# Temporary analysis/extraction files
+tmp/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
