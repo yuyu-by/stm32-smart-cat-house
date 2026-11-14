@@ -80,38 +80,6 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
-void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
-{
-  if (tim_baseHandle->Instance == TIM1)
-  {
-    __HAL_RCC_TIM1_CLK_ENABLE();
-  }
-}
-
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-  if (timHandle->Instance == TIM1)
-  {
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-
-    /* PA8 -> TIM1_CH1 -> automatic feeder servo PWM. */
-    GPIO_InitStruct.Pin = GPIO_PIN_8;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  }
-}
-
-void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
-{
-  if (tim_baseHandle->Instance == TIM1)
-  {
-    __HAL_RCC_TIM1_CLK_DISABLE();
-  }
-}
-
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

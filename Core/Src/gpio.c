@@ -53,6 +53,9 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(DHT11_DATA_GPIO_Port, DHT11_DATA_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(FILL_LIGHT_CTRL_GPIO_Port, FILL_LIGHT_CTRL_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(HX711_SCK_GPIO_Port, HX711_SCK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : DHT11_DATA_Pin */
@@ -61,6 +64,19 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(DHT11_DATA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : FILL_LIGHT_CTRL_Pin */
+  GPIO_InitStruct.Pin = FILL_LIGHT_CTRL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(FILL_LIGHT_CTRL_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : TCRT5000_DO_Pin */
+  GPIO_InitStruct.Pin = TCRT5000_DO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(TCRT5000_DO_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : HX711_SCK_Pin */
   GPIO_InitStruct.Pin = HX711_SCK_Pin;
